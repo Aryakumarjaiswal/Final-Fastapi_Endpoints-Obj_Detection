@@ -1,4 +1,4 @@
-import json
+
 from google.generativeai import GenerativeModel, upload_file, get_file, delete_file
 import google.generativeai as genai
 # from app.services.database import (insert_media,insert_detection_results, insert_detected_objects,)
@@ -8,13 +8,13 @@ import os
 import time
 import json
 
-from PIL import Image
+
 from sqlalchemy import func
 from app.models.models import Inventory, Inventory_Compersion,InspectionCheck
 from app.services.prompt_generator import general_prompt, general_video_prompt, maintenance_prompt
-import time
+
 from app.services.get_task import fetch_task_by_id
-from fastapi import HTTPException
+
 from app.services.draw_bounding_boxes import draw_bounding_boxes
 import uuid
 from dotenv import load_dotenv
@@ -522,6 +522,7 @@ def maintenance_check_video(file_path, media_type, task_id,  db:Session=Depends(
 #     except Exception as e:
 #         db.rollback()
 #         return {"error": f"Error in generating response from Gemini: {str(e)}"}
+
 
 from google.api_core.exceptions import ResourceExhausted  
 
